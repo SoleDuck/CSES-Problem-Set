@@ -1,0 +1,38 @@
+//use a queue
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+
+int main() {
+
+    int n;
+    cin >> n;
+
+    queue<int> circle;
+    for(int i = 1; i <= n; i++) {
+
+        circle.push(i);
+
+    }
+    bool works = false;
+
+    while(circle.size() > 0) {
+
+        int cur = circle.front();
+        circle.pop();
+
+        if(works == false) {
+
+            circle.push(cur);
+            works = true;
+
+        } else {
+
+            cout << cur << " ";
+            works = false;
+
+        }
+
+    }
+
+}
